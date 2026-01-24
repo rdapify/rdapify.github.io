@@ -1,0 +1,10 @@
+# robots.txt for rdapify.com
+
+User-agent: *
+Allow: /
+
+# Sitemaps
+Sitemap: https://rdapify.com/sitemap.xml
+
+# Crawl-delay
+Crawl-delay: 1
