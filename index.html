@@ -201,17 +201,33 @@
         <h1>Enterprise RDAP Client</h1>
         <p class="tagline">Unified, secure, high-performance RDAP client with built-in privacy controls</p>
         
-        <div class="status">
-            ⚠️ Website deployment in progress
+        <div class="status" style="background: #d1fae5; color: #065f46; border-color: #10b981;">
+            🎉 v0.1.0 - First Stable Release
         </div>
 
         <div class="buttons">
             <a href="https://github.com/rdapify/RDAPify" class="btn btn-primary" target="_blank">
                 📦 View on GitHub
             </a>
+            <a href="/docs.html" class="btn btn-secondary">
+                📖 Documentation
+            </a>
             <a href="https://www.npmjs.com/package/rdapify" class="btn btn-secondary" target="_blank">
                 📥 Install from npm
             </a>
+        </div>
+
+        <!-- Quick Start Code Example -->
+        <div style="background: #1e293b; color: #e2e8f0; padding: 24px; border-radius: 12px; text-align: left; margin: 40px 0; font-family: 'Courier New', monospace; font-size: 14px; overflow-x: auto;">
+            <div style="color: #94a3b8; margin-bottom: 12px;">// Install</div>
+            <div style="color: #22c55e;">$ npm install rdapify</div>
+            <br>
+            <div style="color: #94a3b8;">// Quick Start</div>
+            <div><span style="color: #c084fc;">import</span> { <span style="color: #fbbf24;">RDAPClient</span> } <span style="color: #c084fc;">from</span> <span style="color: #22c55e;">'rdapify'</span>;</div>
+            <br>
+            <div><span style="color: #c084fc;">const</span> <span style="color: #fbbf24;">client</span> = <span style="color: #c084fc;">new</span> <span style="color: #fbbf24;">RDAPClient</span>();</div>
+            <div><span style="color: #c084fc;">const</span> <span style="color: #fbbf24;">domain</span> = <span style="color: #c084fc;">await</span> client.<span style="color: #fbbf24;">queryDomain</span>(<span style="color: #22c55e;">'example.com'</span>);</div>
+            <div>console.<span style="color: #fbbf24;">log</span>(domain.handle, domain.status);</div>
         </div>
 
         <div class="features">
@@ -243,28 +259,21 @@
             </p>
             <p style="margin-top: 10px;">
                 <a href="https://github.com/rdapify/RDAPify">Documentation</a> • 
+                <a href="https://github.com/rdapify/RDAPify/discussions">Discussions</a> • 
                 <a href="https://github.com/rdapify/RDAPify/issues">Issues</a> • 
+                <a href="https://github.com/rdapify/RDAPify/security/policy">Security</a> • 
                 <a href="https://github.com/rdapify/RDAPify/blob/main/LICENSE">MIT License</a>
+            </p>
+            <p style="margin-top: 10px; font-size: 13px;">
+                <strong>Contact:</strong> 
+                <a href="mailto:contact@rdapify.com">contact@rdapify.com</a> • 
+                <a href="mailto:security@rdapify.com">security@rdapify.com</a> • 
+                <a href="mailto:support@rdapify.com">support@rdapify.com</a>
             </p>
             <p style="margin-top: 20px;">
                 © 2025 RDAPify Contributors
             </p>
         </div>
     </div>
-
-    <script>
-        // Check if the full site is deployed
-        fetch('/docs/index.html')
-            .then(response => {
-                if (response.ok) {
-                    // Full site is deployed, redirect
-                    window.location.href = '/docs/';
-                }
-            })
-            .catch(() => {
-                // Full site not deployed yet, stay on this page
-                console.log('Full documentation site not yet deployed');
-            });
-    </script>
 </body>
 </html>
