@@ -1,245 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+<html lang="en" dir="ltr" class="plugin-pages plugin-id-default" data-has-hydrated="false">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Interactive playground for testing RDAPify queries in real-time">
-    <meta name="keywords" content="rdap, whois, domain, ip, asn, playground">
-    <meta name="author" content="RDAPify Contributors">
-    
-    <!-- Open Graph -->
-    <meta property="og:title" content="RDAPify Playground">
-    <meta property="og:description" content="Interactive playground for testing RDAP queries">
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://rdapify.com/playground">
-    
-    <title>RDAPify Playground - Interactive RDAP Query Tool</title>
-    
-    <link rel="stylesheet" href="style.css">
-    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🌐</text></svg>">
+<meta charset="UTF-8">
+<meta name="generator" content="Docusaurus v3.9.2">
+<title data-rh="true">Playground | RDAPify</title><meta data-rh="true" name="viewport" content="width=device-width,initial-scale=1"><meta data-rh="true" name="twitter:card" content="summary_large_image"><meta data-rh="true" property="og:image" content="https://rdapify.com/img/rdapify-social-card.png"><meta data-rh="true" name="twitter:image" content="https://rdapify.com/img/rdapify-social-card.png"><meta data-rh="true" property="og:url" content="https://rdapify.com/playground"><meta data-rh="true" property="og:locale" content="en"><meta data-rh="true" property="og:locale:alternate" content="ar"><meta data-rh="true" property="og:locale:alternate" content="es"><meta data-rh="true" property="og:locale:alternate" content="zh"><meta data-rh="true" property="og:locale:alternate" content="ru"><meta data-rh="true" name="docusaurus_locale" content="en"><meta data-rh="true" name="docusaurus_tag" content="default"><meta data-rh="true" name="docsearch:language" content="en"><meta data-rh="true" name="docsearch:docusaurus_tag" content="default"><meta data-rh="true" property="og:title" content="Playground | RDAPify"><meta data-rh="true" name="description" content="Try RDAPify before installing - Interactive RDAP query tool"><meta data-rh="true" property="og:description" content="Try RDAPify before installing - Interactive RDAP query tool"><link data-rh="true" rel="icon" href="/img/favicon.png"><link data-rh="true" rel="canonical" href="https://rdapify.com/playground"><link data-rh="true" rel="alternate" href="https://rdapify.com/playground" hreflang="en"><link data-rh="true" rel="alternate" href="https://rdapify.com/playground" hreflang="ar"><link data-rh="true" rel="alternate" href="https://rdapify.com/playground" hreflang="es"><link data-rh="true" rel="alternate" href="https://rdapify.com/playground" hreflang="zh"><link data-rh="true" rel="alternate" href="https://rdapify.com/playground" hreflang="ru"><link data-rh="true" rel="alternate" href="https://rdapify.com/playground" hreflang="x-default"><link data-rh="true" rel="preconnect" href="https://YOUR_APP_ID-dsn.algolia.net" crossorigin="anonymous"><link rel="preconnect" href="https://www.google-analytics.com">
+<link rel="preconnect" href="https://www.googletagmanager.com">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>function gtag(){dataLayer.push(arguments)}window.dataLayer=window.dataLayer||[],gtag("js",new Date),gtag("config","G-XXXXXXXXXX",{anonymize_ip:!0})</script>
+
+
+
+<link rel="search" type="application/opensearchdescription+xml" title="RDAPify" href="/opensearch.xml">
+<link rel="icon" href="/img/logo.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="theme-color" content="rgb(37, 194, 160)"><link rel="stylesheet" href="/assets/css/styles.daa443db.css">
+<script src="/assets/js/runtime~main.a262ba12.js" defer="defer"></script>
+<script src="/assets/js/main.0ed00cd3.js" defer="defer"></script>
 </head>
-<body>
-    <!-- Header -->
-    <header class="header">
-        <div class="container">
-            <div class="header-content">
-                <div class="logo">
-                    <span class="logo-icon">🌐</span>
-                    <h1>RDAPify Playground</h1>
-                </div>
-                <nav class="nav">
-                    <a href="https://rdapify.com" target="_blank">Home</a>
-                    <a href="https://rdapify.com/docs" target="_blank">Docs</a>
-                    <a href="https://github.com/rdapify/RDAPify" target="_blank">GitHub</a>
-                </nav>
-            </div>
-        </div>
-    </header>
-
-    <!-- Main Content -->
-    <main class="main">
-        <div class="container">
-            <!-- Introduction -->
-            <section class="intro">
-                <h2>Interactive RDAP Query Tool</h2>
-                <p>Test RDAP queries for domains, IP addresses, and ASNs in real-time. No installation required!</p>
-            </section>
-
-            <!-- Query Section -->
-            <section class="query-section">
-                <div class="query-panel">
-                    <h3>Query Input</h3>
-                    
-                    <!-- Query Type Selector -->
-                    <div class="query-type">
-                        <label>Query Type:</label>
-                        <div class="radio-group">
-                            <label class="radio-label">
-                                <input type="radio" name="queryType" value="domain" checked>
-                                <span>Domain</span>
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="queryType" value="ip">
-                                <span>IP Address</span>
-                            </label>
-                            <label class="radio-label">
-                                <input type="radio" name="queryType" value="asn">
-                                <span>ASN</span>
-                            </label>
-                        </div>
-                    </div>
-
-                    <!-- Query Input -->
-                    <div class="input-group">
-                        <input 
-                            type="text" 
-                            id="queryInput" 
-                            class="query-input" 
-                            placeholder="Enter domain, IP, or ASN..."
-                            autocomplete="off"
-                        >
-                        <button id="queryButton" class="btn btn-primary">
-                            <span class="btn-text">Query</span>
-                            <span class="btn-loader" style="display: none;">⏳</span>
-                        </button>
-                    </div>
-                    
-                    <!-- Quota Information -->
-                    <div id="quotaInfo" class="quota-info" style="display: none;"></div>
-
-                    <!-- Examples -->
-                    <div class="examples">
-                        <span class="examples-label">Examples:</span>
-                        <button class="example-btn" data-type="domain" data-query="example.com">example.com</button>
-                        <button class="example-btn" data-type="ip" data-query="8.8.8.8">8.8.8.8</button>
-                        <button class="example-btn" data-type="ip" data-query="2001:4860:4860::8888">2001:4860:4860::8888</button>
-                        <button class="example-btn" data-type="asn" data-query="AS15169">AS15169</button>
-                    </div>
-
-                    <!-- Options (Expandable) -->
-                    <details class="options">
-                        <summary>Advanced Options</summary>
-                        <div class="options-content">
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="optionCache" checked>
-                                <span>Enable caching</span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="optionRedact">
-                                <span>Redact PII</span>
-                            </label>
-                            <label class="checkbox-label">
-                                <input type="checkbox" id="optionVerbose">
-                                <span>Verbose output</span>
-                            </label>
-                        </div>
-                    </details>
-                </div>
-
-                <!-- Results Panel -->
-                <div class="results-panel">
-                    <div class="results-header">
-                        <h3>Response</h3>
-                        <div class="results-actions">
-                            <button id="copyButton" class="btn btn-small" title="Copy to clipboard">
-                                📋 Copy
-                            </button>
-                            <button id="clearButton" class="btn btn-small" title="Clear results">
-                                🗑️ Clear
-                            </button>
-                        </div>
-                    </div>
-                    
-                    <!-- Status Bar -->
-                    <div id="statusBar" class="status-bar" style="display: none;">
-                        <span id="statusText"></span>
-                        <span id="statusTime"></span>
-                    </div>
-
-                    <!-- Results Display -->
-                    <div id="resultsContainer" class="results-container">
-                        <div class="placeholder">
-                            <div class="placeholder-icon">🔍</div>
-                            <p>Enter a query above to see results</p>
-                            <p class="placeholder-hint">Try: example.com, 8.8.8.8, or AS15169</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Query History -->
-            <section class="history-section">
-                <div class="history-header">
-                    <h3>Query History</h3>
-                    <button id="clearHistoryButton" class="btn btn-small">Clear History</button>
-                </div>
-                <div id="historyContainer" class="history-container">
-                    <p class="history-empty">No queries yet</p>
-                </div>
-            </section>
-
-            <!-- Install Section -->
-            <section id="installSection" class="install-section">
-                <div class="install-card">
-                    <h3>🚀 Ready for More?</h3>
-                    <p>Install RDAPify for unlimited queries and advanced features:</p>
-                    
-                    <!-- Package Manager Commands -->
-                    <div class="install-commands">
-                        <div class="install-code">
-                            <code>npm install rdapify</code>
-                            <button class="copy-install-btn" onclick="navigator.clipboard.writeText('npm install rdapify')" title="Copy npm command">📋</button>
-                        </div>
-                        <div class="install-code">
-                            <code>yarn add rdapify</code>
-                            <button class="copy-install-btn" onclick="navigator.clipboard.writeText('yarn add rdapify')" title="Copy yarn command">📋</button>
-                        </div>
-                        <div class="install-code">
-                            <code>pnpm add rdapify</code>
-                            <button class="copy-install-btn" onclick="navigator.clipboard.writeText('pnpm add rdapify')" title="Copy pnpm command">📋</button>
-                        </div>
-                    </div>
-                    
-                    <!-- Example Usage -->
-                    <div class="install-example">
-                        <p><strong>Example Usage:</strong></p>
-                        <pre><code>import { RDAPClient } from 'rdapify';
-
-const client = new RDAPClient();
-const result = await client.domain('example.com');
-console.log(result);</code></pre>
-                    </div>
-                    
-                    <a href="https://rdapify.com/docs/getting-started" target="_blank" class="btn btn-primary">
-                        📖 View Documentation
-                    </a>
-                </div>
-            </section>
-
-            <!-- Features -->
-            <section class="features">
-                <h3>Features</h3>
-                <div class="features-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon">⚡</div>
-                        <h4>Real-time Queries</h4>
-                        <p>Instant RDAP lookups with live results</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🎨</div>
-                        <h4>Syntax Highlighting</h4>
-                        <p>Beautiful JSON formatting and colors</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">📋</div>
-                        <h4>Copy & Share</h4>
-                        <p>Easy copy to clipboard functionality</p>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon">🔒</div>
-                        <h4>Privacy First</h4>
-                        <p>Optional PII redaction built-in</p>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </main>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <p>
-                Built with ❤️ by the <a href="https://github.com/rdapify" target="_blank">RDAPify</a> team
-                | <a href="https://rdapify.com/docs" target="_blank">Documentation</a>
-                | <a href="https://github.com/rdapify/RDAPify" target="_blank">GitHub</a>
-                | <a href="https://rdapify.com/security" target="_blank">Security</a>
-            </p>
-            <p class="footer-note">
-                This playground uses the RDAPify library. All queries are proxied through our server.
-            </p>
-        </div>
-    </footer>
-
-    <script src="app.js"></script>
+<body class="navigation-with-keyboard">
+<svg style="display: none;"><defs>
+<symbol id="theme-svg-external-link" viewBox="0 0 24 24"><path fill="currentColor" d="M21 13v10h-21v-19h12v2h-10v15h17v-8h2zm3-12h-10.988l4.035 4-6.977 7.07 2.828 2.828 6.977-7.07 4.125 4.172v-11z"/></symbol>
+</defs></svg>
+<script>!function(){var t=function(){try{return new URLSearchParams(window.location.search).get("docusaurus-theme")}catch(t){}}()||function(){try{return window.localStorage.getItem("theme")}catch(t){}}();document.documentElement.setAttribute("data-theme",t||"light"),document.documentElement.setAttribute("data-theme-choice",t||"light")}(),function(){try{const a=new URLSearchParams(window.location.search).entries();for(var[t,e]of a)if(t.startsWith("docusaurus-data-")){var n=t.replace("docusaurus-data-","data-");document.documentElement.setAttribute(n,e)}}catch(t){}}(),document.documentElement.setAttribute("data-announcement-bar-initially-dismissed",function(){try{return"true"===localStorage.getItem("docusaurus.announcement.dismiss")}catch(t){}return!1}())</script><div id="__docusaurus"><div role="region" aria-label="Skip to main content"><a class="skipToContent_fXgn" href="#__docusaurus_skipToContent_fallback">Skip to main content</a></div><div class="theme-announcement-bar announcementBar_mb4j" style="background-color:#1a1a2e;color:#25c2a0" role="banner"><div class="announcementBarPlaceholder_vyr4"></div><div class="content_knG7 announcementBarContent_xLdY">🚀 RDAPify v0.1.6 is out — CLI tool, Redis cache adapter & enterprise features. <a target="_blank" rel="noopener noreferrer" href="https://github.com/rdapify/rdapify/releases">See what's new</a> · <a target="_blank" rel="noopener noreferrer" href="https://github.com/rdapify/rdapify">⭐ Star on GitHub</a></div><button type="button" aria-label="Close" class="clean-btn close closeButton_CVFx announcementBarClose_gvF7"><svg viewBox="0 0 15 15" width="14" height="14"><g stroke="currentColor" stroke-width="3.1"><path d="M.75.75l13.5 13.5M14.25.75L.75 14.25"></path></g></svg></button></div><nav aria-label="Main" class="theme-layout-navbar navbar navbar--fixed-top"><div class="navbar__inner"><div class="theme-layout-navbar-left navbar__items"><button aria-label="Toggle navigation bar" aria-expanded="false" class="navbar__toggle clean-btn" type="button"><svg width="30" height="30" viewBox="0 0 30 30" aria-hidden="true"><path stroke="currentColor" stroke-linecap="round" stroke-miterlimit="10" stroke-width="2" d="M4 7h22M4 15h22M4 23h22"></path></svg></button><a class="navbar__brand" href="/"><div class="navbar__logo"><img src="/img/logo-light.svg" alt="RDAPify Logo" class="themedComponent_mlkZ themedComponent--light_NVdE"><img src="/img/logo.svg" alt="RDAPify Logo" class="themedComponent_mlkZ themedComponent--dark_xIcU"></div><b class="navbar__title text--truncate"></b></a><a class="navbar__item navbar__link" href="/docs/DOCUMENTATION_STRUCTURE">Docs</a><a aria-current="page" class="navbar__item navbar__link navbar__link--active" href="/playground">Playground</a></div><div class="theme-layout-navbar-right navbar__items navbar__items--right"><a href="https://github.com/rdapify/rdapify" target="_blank" rel="noopener noreferrer" class="navbar__item navbar__link">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a><div class="navbar__item dropdown dropdown--hoverable dropdown--right"><a href="#" aria-haspopup="true" aria-expanded="false" role="button" class="navbar__link"><svg viewBox="0 0 24 24" width="20" height="20" aria-hidden="true" class="iconLanguage_nlXk"><path fill="currentColor" d="M12.87 15.07l-2.54-2.51.03-.03c1.74-1.94 2.98-4.17 3.71-6.53H17V4h-7V2H8v2H1v1.99h11.17C11.5 7.92 10.44 9.75 9 11.35 8.07 10.32 7.3 9.19 6.69 8h-2c.73 1.63 1.73 3.17 2.98 4.56l-5.09 5.02L4 19l5-5 3.11 3.11.76-2.04zM18.5 10h-2L12 22h2l1.12-3h4.75L21 22h2l-4.5-12zm-2.62 7l1.62-4.33L19.12 17h-3.24z"></path></svg>English</a><ul class="dropdown__menu"><li><a href="/playground" target="_self" rel="noopener noreferrer" class="dropdown__link dropdown__link--active" lang="en">English</a></li><li><a href="/playground" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="ar">العربية</a></li><li><a href="/playground" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="es">Español</a></li><li><a href="/playground" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="zh">中文</a></li><li><a href="/playground" target="_self" rel="noopener noreferrer" class="dropdown__link" lang="ru">Русский</a></li></ul></div><div class="toggle_vylO colorModeToggle_DEke"><button class="clean-btn toggleButton_gllP toggleButtonDisabled_aARS" type="button" disabled="" title="system mode" aria-label="Switch between dark and light mode (currently system mode)"><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP lightToggleIcon_pyhR"><path fill="currentColor" d="M12,9c1.65,0,3,1.35,3,3s-1.35,3-3,3s-3-1.35-3-3S10.35,9,12,9 M12,7c-2.76,0-5,2.24-5,5s2.24,5,5,5s5-2.24,5-5 S14.76,7,12,7L12,7z M2,13l2,0c0.55,0,1-0.45,1-1s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S1.45,13,2,13z M20,13l2,0c0.55,0,1-0.45,1-1 s-0.45-1-1-1l-2,0c-0.55,0-1,0.45-1,1S19.45,13,20,13z M11,2v2c0,0.55,0.45,1,1,1s1-0.45,1-1V2c0-0.55-0.45-1-1-1S11,1.45,11,2z M11,20v2c0,0.55,0.45,1,1,1s1-0.45,1-1v-2c0-0.55-0.45-1-1-1C11.45,19,11,19.45,11,20z M5.99,4.58c-0.39-0.39-1.03-0.39-1.41,0 c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0s0.39-1.03,0-1.41L5.99,4.58z M18.36,16.95 c-0.39-0.39-1.03-0.39-1.41,0c-0.39,0.39-0.39,1.03,0,1.41l1.06,1.06c0.39,0.39,1.03,0.39,1.41,0c0.39-0.39,0.39-1.03,0-1.41 L18.36,16.95z M19.42,5.99c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06c-0.39,0.39-0.39,1.03,0,1.41 s1.03,0.39,1.41,0L19.42,5.99z M7.05,18.36c0.39-0.39,0.39-1.03,0-1.41c-0.39-0.39-1.03-0.39-1.41,0l-1.06,1.06 c-0.39,0.39-0.39,1.03,0,1.41s1.03,0.39,1.41,0L7.05,18.36z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP darkToggleIcon_wfgR"><path fill="currentColor" d="M9.37,5.51C9.19,6.15,9.1,6.82,9.1,7.5c0,4.08,3.32,7.4,7.4,7.4c0.68,0,1.35-0.09,1.99-0.27C17.45,17.19,14.93,19,12,19 c-3.86,0-7-3.14-7-7C5,9.07,6.81,6.55,9.37,5.51z M12,3c-4.97,0-9,4.03-9,9s4.03,9,9,9s9-4.03,9-9c0-0.46-0.04-0.92-0.1-1.36 c-0.98,1.37-2.58,2.26-4.4,2.26c-2.98,0-5.4-2.42-5.4-5.4c0-1.81,0.89-3.42,2.26-4.4C12.92,3.04,12.46,3,12,3L12,3z"></path></svg><svg viewBox="0 0 24 24" width="24" height="24" aria-hidden="true" class="toggleIcon_g3eP systemToggleIcon_QzmC"><path fill="currentColor" d="m12 21c4.971 0 9-4.029 9-9s-4.029-9-9-9-9 4.029-9 9 4.029 9 9 9zm4.95-13.95c1.313 1.313 2.05 3.093 2.05 4.95s-0.738 3.637-2.05 4.95c-1.313 1.313-3.093 2.05-4.95 2.05v-14c1.857 0 3.637 0.737 4.95 2.05z"></path></svg></button></div><div class="navbarSearchContainer_Bca1"><button type="button" class="DocSearch DocSearch-Button" aria-label="Search (Meta+k)" aria-keyshortcuts="Meta+k"><span class="DocSearch-Button-Container"><svg width="20" height="20" class="DocSearch-Search-Icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="8" stroke="currentColor" fill="none" stroke-width="1.4"></circle><path d="m21 21-4.3-4.3" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"></path></svg><span class="DocSearch-Button-Placeholder">Search</span></span><span class="DocSearch-Button-Keys"></span></button></div></div></div><div role="presentation" class="navbar-sidebar__backdrop"></div></nav><div id="__docusaurus_skipToContent_fallback" class="theme-layout-main main-wrapper mainWrapper_z2l0"><div style="width:100%;height:calc(100vh - 60px);border:none;overflow:hidden"><iframe src="/playground/index.html" style="width:100%;height:100%;border:none" title="RDAPify Playground"></iframe></div></div><footer class="theme-layout-footer footer footer--dark"><div class="container container-fluid"><div class="row footer__links"><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Documentation</div><ul class="footer__items clean-list"><li class="footer__item"><a class="footer__link-item" href="/docs/getting-started/installation">Getting Started</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/api-reference/client">API Reference</a></li><li class="footer__item"><a class="footer__link-item" href="/docs/guides/error-handling">Guides</a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">Community</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/rdapify/rdapify/discussions" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub Discussions<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://stackoverflow.com/questions/tagged/rdapify" target="_blank" rel="noopener noreferrer" class="footer__link-item">Stack Overflow<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://discord.gg/rdapify" target="_blank" rel="noopener noreferrer" class="footer__link-item">Discord<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li></ul></div><div class="theme-layout-footer-column col footer__col"><div class="footer__title">More</div><ul class="footer__items clean-list"><li class="footer__item"><a href="https://github.com/rdapify" target="_blank" rel="noopener noreferrer" class="footer__link-item">GitHub<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a href="https://www.npmjs.com/package/rdapify" target="_blank" rel="noopener noreferrer" class="footer__link-item">npm<svg width="13.5" height="13.5" aria-label="(opens in new tab)" class="iconExternalLink_nPIU"><use href="#theme-svg-external-link"></use></svg></a></li><li class="footer__item"><a class="footer__link-item" href="/security">Security</a></li><li class="footer__item"><a class="footer__link-item" href="/privacy">Privacy</a></li></ul></div></div><div class="footer__bottom text--center"><div class="footer__copyright">Copyright © 2026 RDAPify Contributors. Built with Docusaurus.</div></div></div></footer></div>
 </body>
 </html>
